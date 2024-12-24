@@ -93,3 +93,9 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_NOTIFICATIONS_TOKEN }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+          
+          - name: Run SonarScanner
+  uses: sonarsource/sonarqube-scan-action@v4.1.0
+  with:
+    projectKey: rsakisap/rsakisap_devopslab-clc12
+    sonarToken: ${{ secrets.SONAR_TOKEN }}
